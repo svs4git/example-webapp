@@ -11,9 +11,9 @@ pipeline {
                 echo 'Logging Into the Private ECR Registry'
                 script {
                     GIT_COMMIT_HASH = sh (script: "git log -n 1 --pretty=format:'%H'", returnStdout: true)
-                    ACCOUNT_REGISTRY_PREFIX = "089778365617.dkr.ecr.us-east-1.amazonaws.com"
+                    ACCOUNT_REGISTRY_PREFIX = "ec2-13-234-32-187.ap-south-1.compute.amazonaws.com"
                     sh """
-                    \$(aws ecr get-login --no-include-email --region us-east-1)
+                    \$(aws ecr get-login --no-include-email --region ap-south-1)
                     """
                 }
             }
